@@ -2,8 +2,8 @@ install:
 	poetry install
 
 setup:
-    make install
-    sh ./build.sh
+	make install
+	sh ./build.sh
 
 dev:
 	poetry run flask --app page_analyzer:app run
