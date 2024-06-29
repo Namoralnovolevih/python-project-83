@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block main %}
+<div class="container-lg mt-3">
+    <div class="row">
+    <div class="col-12 col-md-10 col-lg-8 mx-auto border rounded-3 p-5 bg-light">
+      <h1 class="display-3">Анализатор страниц</h1>
+        <p class="lead">Бесплатно проверяйте сайты на SEO-пригодность</p>
+
+        <form action="{{ url_for('post_urls') }}" method="post" class="d-flex justify-content-center" required>
+            
+                <label for="input_url" class="visually-hidden">URL</label>
+                <input required type="text" name="url" class="border rounded-3 form-control form-control-lg"
+            placeholder="https://www.example.com" id="input_url" value="{{ url | default('', true) }}">
+
+                <input type="submit" class="btn btn-primary btn-lg ms-3 px-5 mx-3" value="ПРОВЕРИТЬ"/>
+            
+        </form>  
+
+    </div>
+    </div>
+</div>
+{% endblock %}
